@@ -17,13 +17,14 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                sh '''
-                    mkdir -p /tmp/flask-staging
-                    cp -r . /tmp/flask-staging/
-                '''
-                echo 'Application deployed to staging successfully.'
-            }
-        }
+    steps {
+        sh '''
+            rm -rf /tmp/flask-staging
+            mkdir -p /tmp/flask-staging
+            cp -r * /tmp/flask-staging/
+        '''
+        echo 'Application deployed to staging successfully.'
+    }
+}
     }
 }
