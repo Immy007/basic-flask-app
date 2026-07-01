@@ -16,7 +16,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+     stage('Deploy') {
     steps {
         sh '''
             rm -rf /tmp/flask-staging
